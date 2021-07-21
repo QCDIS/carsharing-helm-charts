@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9981f631-5580-4733-a53d-5290111b3ea4" name="Default Changelist" comment="skip probes">
-      <change afterPath="$PROJECT_DIR$/index.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="9981f631-5580-4733-a53d-5290111b3ea4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -209,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626863714992</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="1st commit">
+      <created>1626864645375</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1626864645375</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,7 +255,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1st commit" />
     <MESSAGE value="defined nginx" />
     <MESSAGE value="added more services" />
     <MESSAGE value="fix test" />
@@ -264,6 +268,7 @@
     <MESSAGE value="set vars in nginx configmap" />
     <MESSAGE value="update values" />
     <MESSAGE value="skip probes" />
-    <option name="LAST_COMMIT_MESSAGE" value="skip probes" />
+    <MESSAGE value="1st commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="1st commit" />
   </component>
 </project>
