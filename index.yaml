@@ -3,12 +3,12 @@ entries:
   carsharing-helm-charts:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-07-21T12:53:53.162217603+02:00"
+    created: "2021-07-21T13:51:57.097651822+02:00"
     description: A Helm chart for Kubernetes
-    digest: 3525c00ba279be60d58de6aef65d8afa1635eb82c60f0e4b9c79c7f9b290daec
+    digest: 029d9883f6e44f9b98d1d3006f50e868f6bd1b4c7660ad8347fec4d0a32a0631
     name: carsharing-helm-charts
     type: application
     urls:
     - https://qcdis.github.io/carsharing-helm-charts/carsharing-helm-charts-0.1.0.tgz
     version: 0.1.0
-generated: "2021-07-21T12:53:53.160038628+02:00"
+generated: "2021-07-21T13:51:57.094236222+02:00"
