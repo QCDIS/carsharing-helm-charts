@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork
+  labels:
+    {{- include "carsharing-helm-charts.labels" . | nindent 4 }}
+    app: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork
+spec:
+  type: {{ .Values.nodesocialnetwork.service.type }}
+  ports:
+    - port: {{ .Values.nodesocialnetwork.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "carsharing-helm-charts.selectorLabels" . | nindent 4 }}
+    app: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork

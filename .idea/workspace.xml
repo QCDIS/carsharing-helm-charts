@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9981f631-5580-4733-a53d-5290111b3ea4" name="Default Changelist" comment="skip probes">
+      <change afterPath="$PROJECT_DIR$/index.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.helmignore" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="1tigZPVyrlKy4RPKL8Y0zcmtb66" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/values.yaml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/templates/mongodb" />
+      <recent name="$PROJECT_DIR$/templates/node-api/tests" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/templates/node-api" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/nginx" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/carsharing-helm-charts" />
+      <recent name="$PROJECT_DIR$/carsharing-helm-charts/templates/nginx" />
+      <recent name="$PROJECT_DIR$/templates" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9981f631-5580-4733-a53d-5290111b3ea4" name="Default Changelist" comment="" />
+      <created>1623257378629</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623257378629</updated>
+    </task>
+    <task id="LOCAL-00001" summary="1st commit">
+      <created>1623323914416</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623323914417</updated>
+    </task>
+    <task id="LOCAL-00002" summary="defined nginx">
+      <created>1624388757755</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1624388757755</updated>
+    </task>
+    <task id="LOCAL-00003" summary="defined nginx">
+      <created>1624388787586</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1624388787586</updated>
+    </task>
+    <task id="LOCAL-00004" summary="defined nginx">
+      <created>1624388809644</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624388809644</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added more services">
+      <created>1624388974692</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1624388974692</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix test">
+      <created>1624452172596</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1624452172596</updated>
+    </task>
+    <task id="LOCAL-00007" summary="config map to values.yaml">
+      <created>1624872238664</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1624872238664</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added quotes">
+      <created>1624880022740</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624880022740</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixed secrets">
+      <created>1624882456453</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1624882456453</updated>
+    </task>
+    <task id="LOCAL-00010" summary="connects with mongo">
+      <created>1624999559605</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1624999559605</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added node-python">
+      <created>1625047414780</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1625047414780</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added node-python">
+      <created>1625652986372</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1625652986372</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added node-python">
+      <created>1625653294531</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1625653294531</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added social network">
+      <created>1626079754557</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1626079754557</updated>
+    </task>
+    <task id="LOCAL-00015" summary="set mongodb host from mongo values">
+      <created>1626171065767</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1626171065767</updated>
+    </task>
+    <task id="LOCAL-00016" summary="set vars in nginx configmap">
+      <created>1626172528110</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1626172528110</updated>
+    </task>
+    <task id="LOCAL-00017" summary="update values">
+      <created>1626172939391</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1626172939391</updated>
+    </task>
+    <task id="LOCAL-00018" summary="skip probes">
+      <created>1626173983785</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1626173983785</updated>
+    </task>
+    <task id="LOCAL-00019" summary="skip probes">
+      <created>1626801150093</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1626801150093</updated>
+    </task>
+    <task id="LOCAL-00020" summary="skip probes">
+      <created>1626801195822</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1626801195822</updated>
+    </task>
+    <task id="LOCAL-00021" summary="skip probes">
+      <created>1626801526077</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1626801526077</updated>
+    </task>
+    <task id="LOCAL-00022" summary="skip probes">
+      <created>1626863714992</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1626863714992</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="60e69658-08a1-42c1-a7fc-b42e19f33653">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="60e69658-08a1-42c1-a7fc-b42e19f33653" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1st commit" />
+    <MESSAGE value="defined nginx" />
+    <MESSAGE value="added more services" />
+    <MESSAGE value="fix test" />
+    <MESSAGE value="config map to values.yaml" />
+    <MESSAGE value="added quotes" />
+    <MESSAGE value="fixed secrets" />
+    <MESSAGE value="connects with mongo" />
+    <MESSAGE value="added node-python" />
+    <MESSAGE value="added social network" />
+    <MESSAGE value="set mongodb host from mongo values" />
+    <MESSAGE value="set vars in nginx configmap" />
+    <MESSAGE value="update values" />
+    <MESSAGE value="skip probes" />
+    <option name="LAST_COMMIT_MESSAGE" value="skip probes" />
+  </component>
+</project>

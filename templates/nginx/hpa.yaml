@@ -1,0 +1,29 @@
+{{- if .Values.nginx.autoscaling.enabled }}
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ include "carsharing-helm-charts.fullname" . }}-nginx
+  labels:
+    {{- include "carsharing-helm-charts.labels" . | nindent 4 }}
+    app: {{ include "carsharing-helm-charts.fullname" . }}-nginx
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "carsharing-helm-charts.fullname" . }}
+  minReplicas: {{ .Values.nginx.autoscaling.minReplicas }}
+  maxReplicas: {{ .Values.nginx.autoscaling.maxReplicas }}
+  metrics:
+    {{- if .Values.nginx.autoscaling.targetCPUUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: {{ .Values.nginx.autoscaling.targetCPUUtilizationPercentage }}
+    {{- end }}
+    {{- if .Values.nginx.autoscaling.targetMemoryUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: memory
+        targetAverageUtilization: {{ .Values.nginx.autoscaling.targetMemoryUtilizationPercentage }}
+    {{- end }}
+{{- end }}

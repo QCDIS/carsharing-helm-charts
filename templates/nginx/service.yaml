@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "carsharing-helm-charts.fullname" . }}-nginx
+  labels:
+    {{- include "carsharing-helm-charts.labels" . | nindent 4 }}
+    app: {{ include "carsharing-helm-charts.fullname" . }}-nginx
+spec:
+  type: {{ .Values.nginx.service.type }}
+  ports:
+    - port: {{ .Values.nginx.service.http1.port }}
+      targetPort: http1
+      protocol: TCP
+      name: http1
+    - port: {{ .Values.nginx.service.http2.port }}
+      targetPort: http2
+      protocol: TCP
+      name: http2
+    - port: {{ .Values.nginx.service.http3.port }}
+      targetPort: http3
+      protocol: TCP
+      name: http3
+  selector:
+    {{- include "carsharing-helm-charts.selectorLabels" . | nindent 4 }}
+    app: {{ include "carsharing-helm-charts.fullname" . }}-nginx

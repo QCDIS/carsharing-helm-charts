@@ -1,0 +1,503 @@
+# Default values for carsharing-helm-charts.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+nameOverride: ""
+fullnameOverride: ""
+
+nodeapi:
+  replicaCount: 1
+
+  image:
+    repository: registry.articonf.eu:4432/agi/carsharing-api
+    pullPolicy: Always
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: "latest"
+
+  imagePullSecrets: []
+
+
+  secret:
+    # Specifies whether a service account should be created
+    create: true
+    # Annotations to add to the service account
+    annotations: {}
+    # The name of the service account to use.
+    # If not set and create is true, a name is generated using the fullname template
+    name: ""
+    docker_auth: 
+
+  podAnnotations: {}
+
+  podSecurityContext: {}
+    # fsGroup: 2000
+
+  securityContext: {}
+    # capabilities:
+    #   drop:
+    #   - ALL
+    # readOnlyRootFilesystem: true
+    # runAsNonRoot: true
+    # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8080
+
+  ingress:
+    enabled: false
+    className: ""
+    annotations: {}
+      # kubernetes.io/ingress.class: nginx
+      # kubernetes.io/tls-acme: "true"
+    hosts:
+      - host: chart-example.local
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls: []
+    #  - secretName: chart-example-tls
+    #    hosts:
+    #      - chart-example.local
+
+  resources: {}
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 128Mi
+
+  autoscaling:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 100
+    targetCPUUtilizationPercentage: 80
+    # targetMemoryUtilizationPercentage: 80
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+  environment:
+    ai_api_city: Porto
+    ai_api_url:
+    art_api_key:
+    art_km_limit: 1
+    art_km_limit_to_start_travel: 0.5
+    art_reduced_seats_percentage: 0
+    art_time_limit: 900000
+    art_time_limit_to_start_travel: 300000
+    aws_access_key_id:
+    aws_api_version_sns: 2010-03-31
+    aws_region: eu-west-1
+    aws_secret_key_id:
+    aws_sns_arn:
+    carsharing_api_url: http://localhost:8080
+    fabric_admin_username: admin
+    fabric_ca: 
+    fabric_ca_enrollment_id:
+    fabric_ca_enrollment_pass:
+    fabric_ca_name:
+    fabric_chaincode: carsharing
+    fabric_channel: appchannel
+    fabric_connection_path: /home/node/app/config/connection.json
+    fabric_fleet_manager_secret: fleet_managerpw
+    fabric_fleet_manager_username: fleet_manager
+    fabric_mspid:
+    fabric_tls: '{"trustedRoots":[],"verify":false}'
+    fabric_wallet_path: /home/node/app/config/hfc-key-store
+    fcm_apikey:
+    maximum_distance_to_check_vehicle_in_metters: 500
+    maximum_distance_to_penalize_in_metters: 3000
+    maximum_time_to_check_vehicle_in_minutes: 500
+    maximum_time_to_penalize_in_minutes: 60
+    minimum_distance_to_penalize_in_metters: 1000
+    minimum_time_to_penalize_in_minutes: 30
+    node_env: production
+    node_temp_folder: /home/node/app/tmp
+    paypal_cancel_ur: https://stg-carsharing.agiliacenter.com/cscoin/cancelBuy
+    paypal_client_id:
+    paypal_client_secret:
+    paypal_mode: sandbox
+    paypal_success_url: https://stg-carsharing.agiliacenter.com/cscoin/success?id=
+    paypal_webhook_buy_cs_coin: 
+    paypal_webhook_withdraw_cs_coin: 
+    port: 8080
+    price_percentage_for_distance_reward: 0.2
+    price_percentage_for_vehicle_reward: 0.2
+    radius_nearest_location: 3000
+    socket_port: 8110
+    socket_url: http://localhost:8110/stream
+    swagger_host: localhost:8080
+
+nodesocialnetwork:
+  replicaCount: 1
+
+  image:
+    repository: registry.articonf.eu:4432/agi/carsharing-socialnetwork
+    pullPolicy: Always
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: "latest"
+
+  imagePullSecrets: []
+
+
+  secret:
+    # Specifies whether a service account should be created
+    create: true
+    # Annotations to add to the service account
+    annotations: {}
+    # The name of the service account to use.
+    # If not set and create is true, a name is generated using the fullname template
+    name: ""
+    docker_auth: 
+
+  podAnnotations: {}
+
+  podSecurityContext: {}
+    # fsGroup: 2000
+
+  securityContext: {}
+    # capabilities:
+    #   drop:
+    #   - ALL
+    # readOnlyRootFilesystem: true
+    # runAsNonRoot: true
+    # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8081
+
+  ingress:
+    enabled: false
+    className: ""
+    annotations: {}
+      # kubernetes.io/ingress.class: nginx
+      # kubernetes.io/tls-acme: "true"
+    hosts:
+      - host: chart-example.local
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls: []
+    #  - secretName: chart-example-tls
+    #    hosts:
+    #      - chart-example.local
+
+  resources: {}
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 128Mi
+
+  autoscaling:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 100
+    targetCPUUtilizationPercentage: 80
+    # targetMemoryUtilizationPercentage: 80
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+  environment:
+
+    art_api_key: 
+    art_api_port: "8080"
+    mongo_database: carsharing-socialnetwork
+    mongo_database_type: mongo
+    mongo_host: stg-carsharing.agiliacenter.com
+    mongo_password: ""
+    mongo_port: "27017"
+    mongo_username: ""
+    node_env: dev
+    number_of_users_needed_to_report: "2"
+    port: "8081"
+    swagger_host: localhost:8081
+
+nodepython:
+  replicaCount: 1
+
+  image:
+    repository: registry.articonf.eu:4432/agi/carsharing-ai-api
+    pullPolicy: Always
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: "latest"
+
+  imagePullSecrets: []
+
+
+  secret:
+    # Specifies whether a service account should be created
+    create: true
+    # Annotations to add to the service account
+    annotations: {}
+    # The name of the service account to use.
+    # If not set and create is true, a name is generated using the fullname template
+    name: ""
+    docker_auth: 
+
+  podAnnotations: {}
+
+  podSecurityContext: {}
+    # fsGroup: 2000
+
+  securityContext: {}
+    # capabilities:
+    #   drop:
+    #   - ALL
+    # readOnlyRootFilesystem: true
+    # runAsNonRoot: true
+    # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 8082
+
+  ingress:
+    enabled: false
+    className: ""
+    annotations: {}
+      # kubernetes.io/ingress.class: nginx
+      # kubernetes.io/tls-acme: "true"
+    hosts:
+      - host: chart-example.local
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls: []
+    #  - secretName: chart-example-tls
+    #    hosts:
+    #      - chart-example.local
+
+  resources: {}
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 128Mi
+
+  autoscaling:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 100
+    targetCPUUtilizationPercentage: 80
+    # targetMemoryUtilizationPercentage: 80
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+  environment:
+    cache_check_period: "86400"
+    cache_ttl: "604800"
+    cities: '{"porto": {"city": "Porto", "latitude": 41.14961, "longitude": -8.61099},
+      "boston": {"city": "Boston", "latitude": 42.35843, "longitude": -71.05977}, "newyork":
+      {"city": "New York", "latitude": 40.71427, "longitude": -74.00597}, "lima": {"city":
+      "Lima", "latitude": -12.04318, "longitude": -77.02824}, "quito": {"city": "Quito",
+      "latitude": -0.22985, "longitude": -78.52495}}'
+    default_temperature: "21"
+    geocode_file: zones_ids.csv
+    max_number_of_requests: "10000"
+    minutes_to_limit_requests: "60"
+    model_file: model.pkl
+    node_env: production
+    path_model_and_data: /home/python/app/filteredData
+    port: "8082"
+    prediction_algorithm_file: /home/python/app/carsharing-predictions/predict_points.py
+    radius_nearest_location: "3000"
+    swagger_host: localhost:8081
+    weather_api_url: https://api.openweathermap.org/data/2.5/onecall
+    weather_apikey: 
+
+
+nginx:
+  replicaCount: 1
+
+  image:
+    repository: nginx
+    pullPolicy: IfNotPresent
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: "1.17.9-alpine"
+
+  imagePullSecrets: []
+
+
+  serviceAccount:
+    # Specifies whether a service account should be created
+    create: false
+    # Annotations to add to the service account
+    annotations: {}
+    # The name of the service account to use.
+    # If not set and create is true, a name is generated using the fullname template
+    name: ""
+
+  podAnnotations: {}
+
+  podSecurityContext: {}
+    # fsGroup: 2000
+
+  securityContext: {}
+    # capabilities:
+    #   drop:
+    #   - ALL
+    # readOnlyRootFilesystem: true
+    # runAsNonRoot: true
+    # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    http1:
+      port: 4431
+    http2:
+      port: 4432
+    http3:
+      port: 4433
+
+  ingress:
+    enabled: false
+    className: ""
+    annotations: {}
+      # kubernetes.io/ingress.class: nginx
+      # kubernetes.io/tls-acme: "true"
+    hosts:
+      - host: chart-example.local
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls: []
+    #  - secretName: chart-example-tls
+    #    hosts:
+    #      - chart-example.local
+
+  resources: {}
+
+  autoscaling:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 100
+    targetCPUUtilizationPercentage: 80
+    # targetMemoryUtilizationPercentage: 80
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}
+
+mongodb:
+  image:
+    repository: mongo
+    pullPolicy: IfNotPresent
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: "4"
+
+  env:
+    mongo_initdb_root_password:
+    mongo_initdb_root_username:
+
+  service:
+    type: ClusterIP
+    port: 27017
+
+other:
+  replicaCount: 1
+
+  image:
+    repository: nginx
+    pullPolicy: IfNotPresent
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: ""
+
+  imagePullSecrets: []
+
+
+  serviceAccount:
+    # Specifies whether a service account should be created
+    create: false
+    # Annotations to add to the service account
+    annotations: {}
+    # The name of the service account to use.
+    # If not set and create is true, a name is generated using the fullname template
+    name: ""
+
+  podAnnotations: {}
+
+  podSecurityContext: {}
+    # fsGroup: 2000
+
+  securityContext: {}
+    # capabilities:
+    #   drop:
+    #   - ALL
+    # readOnlyRootFilesystem: true
+    # runAsNonRoot: true
+    # runAsUser: 1000
+
+  service:
+    type: ClusterIP
+    port: 80
+
+  ingress:
+    enabled: false
+    className: ""
+    annotations: {}
+      # kubernetes.io/ingress.class: nginx
+      # kubernetes.io/tls-acme: "true"
+    hosts:
+      - host: chart-example.local
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls: []
+    #  - secretName: chart-example-tls
+    #    hosts:
+    #      - chart-example.local
+
+  resources: {}
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 128Mi
+
+  autoscaling:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 100
+    targetCPUUtilizationPercentage: 80
+    # targetMemoryUtilizationPercentage: 80
+
+  nodeSelector: {}
+
+  tolerations: []
+
+  affinity: {}

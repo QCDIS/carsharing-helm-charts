@@ -1,0 +1,126 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork
+  labels:
+    {{- include "carsharing-helm-charts.labels" . | nindent 4 }}
+    app: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork
+spec:
+  {{- if not .Values.nodesocialnetwork.autoscaling.enabled }}
+  replicas: {{ .Values.nodesocialnetwork.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "carsharing-helm-charts.selectorLabels" . | nindent 6 }}
+      app: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork
+  template:
+    metadata:
+      {{- with .Values.nodesocialnetwork.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "carsharing-helm-charts.selectorLabels" . | nindent 8 }}
+        app: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork
+    spec:
+      imagePullSecrets:
+        - name:  {{ include "carsharing-helm-charts.secretName" . }}-nodesocialnetwork
+      restartPolicy: Always
+      containers:
+        - args:
+            - node
+            - app.js
+          env:
+            - name: ART_API_BASEPATH
+              valueFrom:
+                configMapKeyRef:
+                  key: ART_API_BASEPATH
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: ART_API_KEY
+              valueFrom:
+                configMapKeyRef:
+                  key: ART_API_KEY
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: ART_API_PORT
+              valueFrom:
+                configMapKeyRef:
+                  key: ART_API_PORT
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: DB_URI
+              valueFrom:
+                configMapKeyRef:
+                  key: DB_URI
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: MONGO_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGO_DATABASE
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: MONGO_DATABASE_TYPE
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGO_DATABASE_TYPE
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: MONGO_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGO_HOST
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: MONGO_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGO_PASSWORD
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: MONGO_PORT
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGO_PORT
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: MONGO_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGO_USERNAME
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: NODE_ENV
+              valueFrom:
+                configMapKeyRef:
+                  key: NODE_ENV
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: NUMBER_OF_USERS_NEEDED_TO_REPORT
+              valueFrom:
+                configMapKeyRef:
+                  key: NUMBER_OF_USERS_NEEDED_TO_REPORT
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  key: PORT
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: SWAGGER_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: SWAGGER_HOST
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+          image: "{{ .Values.nodesocialnetwork.image.repository }}:{{ .Values.nodesocialnetwork.image.tag | default .Chart.AppVersion }}"
+          name: {{ .Chart.Name }}-nodesocialnetwork
+          ports:
+            - name: http
+              containerPort: 8082
+              protocol: TCP
+
+      {{- with .Values.nodesocialnetwork.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodesocialnetwork.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodesocialnetwork.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+
+
+
+

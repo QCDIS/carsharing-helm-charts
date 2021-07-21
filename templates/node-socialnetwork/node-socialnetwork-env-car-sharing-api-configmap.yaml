@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+  labels:
+    {{- include "carsharing-helm-charts.labels" . | nindent 4 }}
+    app: nodesocialnetwork-config
+
+data:
+  ART_API_BASEPATH: http://{{ include "carsharing-helm-charts.fullname" . }}-nodeapi:8080
+  ART_API_KEY: {{ .Values.nodesocialnetwork.environment.art_api_key }}
+  ART_API_PORT: {{ .Values.nodesocialnetwork.environment.art_api_port |  quote }}
+  DB_URI: mongodb://{{ .Values.mongodb.env.mongo_initdb_root_username}}:{{ .Values.mongodb.env.mongo_initdb_root_password}}@{{ include "carsharing-helm-charts.fullname" . }}-mongodb/articonf?authSource=admin
+  MONGO_DATABASE: {{ .Values.nodesocialnetwork.environment.mongo_database }}
+  MONGO_DATABASE_TYPE: {{ .Values.nodesocialnetwork.environment.mongo_database_type }}
+  MONGO_HOST: {{ .Values.nodesocialnetwork.environment.mongo_host }}
+  MONGO_PASSWORD: {{ .Values.nodesocialnetwork.environment.mongo_password | quote }}
+  MONGO_PORT: {{ .Values.nodesocialnetwork.environment.mongo_port | quote }}
+  MONGO_USERNAME: {{ .Values.nodesocialnetwork.environment.mongo_username | quote }}
+  NODE_ENV: {{ .Values.nodesocialnetwork.environment.node_env }}
+  NUMBER_OF_USERS_NEEDED_TO_REPORT: {{ .Values.nodesocialnetwork.environment.number_of_users_needed_to_report | quote }}
+  PORT: {{ .Values.nodesocialnetwork.environment.port | quote }}
+  SWAGGER_HOST: {{ .Values.nodesocialnetwork.environment.swagger_host }}

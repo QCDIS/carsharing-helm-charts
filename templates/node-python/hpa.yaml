@@ -1,0 +1,29 @@
+{{- if .Values.nodepython.autoscaling.enabled }}
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython
+  labels:
+    {{- include "carsharing-helm-charts.labels" . | nindent 4 }}
+    app: {{ include "carsharing-helm-charts.fullname" . }}-nodepython
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "carsharing-helm-charts.fullname" . }}
+  minReplicas: {{ .Values.nodepython.autoscaling.minReplicas }}
+  maxReplicas: {{ .Values.nodepython.autoscaling.maxReplicas }}
+  metrics:
+    {{- if .Values.nodepython.autoscaling.targetCPUUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: {{ .Values.nodepython.autoscaling.targetCPUUtilizationPercentage }}
+    {{- end }}
+    {{- if .Values.nodepython.autoscaling.targetMemoryUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: memory
+        targetAverageUtilization: {{ .Values.nodepython.autoscaling.targetMemoryUtilizationPercentage }}
+    {{- end }}
+{{- end }}

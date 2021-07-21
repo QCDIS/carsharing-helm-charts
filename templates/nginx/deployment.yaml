@@ -1,0 +1,89 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "carsharing-helm-charts.fullname" . }}-nginx
+  labels:
+    {{- include "carsharing-helm-charts.labels" . | nindent 4 }}
+    app: {{ include "carsharing-helm-charts.fullname" . }}-nginx
+spec:
+  {{- if not .Values.nginx.autoscaling.enabled }}
+  replicas: {{ .Values.nginx.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "carsharing-helm-charts.selectorLabels" . | nindent 6 }}
+      app: {{ include "carsharing-helm-charts.fullname" . }}-nginx
+  template:
+    metadata:
+      {{- with .Values.nginx.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "carsharing-helm-charts.selectorLabels" . | nindent 8 }}
+        app: {{ include "carsharing-helm-charts.fullname" . }}-nginx
+    spec:
+      restartPolicy: Always
+      {{- with .Values.nginx.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "carsharing-helm-charts.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.nginx.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}-nginx
+          securityContext:
+            {{- toYaml .Values.nginx.securityContext | nindent 12 }}
+          image: "{{ .Values.nginx.image.repository }}:{{ .Values.nginx.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.nginx.image.pullPolicy }}
+          ports:
+            - name: http1
+              containerPort: 4431
+              protocol: TCP
+            - name: http2
+              containerPort: 4432
+              protocol: TCP
+            - name: http3
+              containerPort: 4433
+              protocol: TCP
+          volumeMounts:
+          - mountPath: /etc/nginx/conf.d
+            name: {{ include "carsharing-helm-charts.fullname" . }}-nginx-config-volume
+
+#          livenessProbe:
+#            httpGet:
+#              path: /
+#              port: http1
+#          readinessProbe:
+#            httpGet:
+#              path: /
+#              port: http1
+          resources:
+            {{- toYaml .Values.nginx.resources | nindent 12 }}
+      {{- with .Values.nginx.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nginx.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nginx.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+
+      volumes:
+        - name: {{ include "carsharing-helm-charts.fullname" . }}-nginx-config-volume
+          configMap:
+            name: {{ include "carsharing-helm-charts.fullname" . }}-nginx-config
+            items:
+              - key: 01-carsharing.conf
+                path: 01-carsharing.conf
+#              - key: 02-carsharing-socialnetwork.conf
+#                path: 02-carsharing-socialnetwork.conf
+#              - key: 03-carsharing-api-ai.conf
+#                path: 03-carsharing-api-ai.conf
+
+
