@@ -39,8 +39,8 @@ data:
             send_timeout                300;
     }
 
-      access_log /var/log/nginx/stg-carsharing.agiliacenter.com-access.log;
-      error_log  /var/log/nginx/stg-carsharing.agiliacenter.com-error.log;
+      #access_log /var/log/nginx/stg-carsharing.agiliacenter.com-access.log;
+      #error_log  /var/log/nginx/stg-carsharing.agiliacenter.com-error.log;
     }
 
 
@@ -80,8 +80,8 @@ data:
             send_timeout                300;
     }
 
-      access_log /var/log/nginx/stg-carsharing.agiliacenter.com-access.log;
-      error_log  /var/log/nginx/stg-carsharing.agiliacenter.com-error.log;
+      #access_log /var/log/nginx/stg-carsharing.agiliacenter.com-access.log;
+      #error_log  /var/log/nginx/stg-carsharing.agiliacenter.com-error.log;
     }
 
 
@@ -119,6 +119,6 @@ data:
             send_timeout                300;
     }
 
-      access_log /var/log/nginx/stg-carsharing.agiliacenter.com-access.log;
-      error_log  /var/log/nginx/stg-carsharing.agiliacenter.com-error.log;
+      #access_log /var/log/nginx/stg-carsharing.agiliacenter.com-access.log;
+      #error_log  /var/log/nginx/stg-carsharing.agiliacenter.com-error.log;
     }
