@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9981f631-5580-4733-a53d-5290111b3ea4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/nginx/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nginx/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/nginx/service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nginx/service.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626951819991</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="fix port">
+      <created>1626957290237</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1626957290237</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

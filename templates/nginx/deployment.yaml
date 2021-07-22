@@ -81,9 +81,9 @@ spec:
             items:
               - key: 01-carsharing.conf
                 path: 01-carsharing.conf
-#              - key: 02-carsharing-socialnetwork.conf
-#                path: 02-carsharing-socialnetwork.conf
-#              - key: 03-carsharing-api-ai.conf
-#                path: 03-carsharing-api-ai.conf
+              - key: 02-carsharing-socialnetwork.conf
+                path: 02-carsharing-socialnetwork.conf
+              - key: 03-carsharing-api-ai.conf
+                path: 03-carsharing-api-ai.conf
 
 

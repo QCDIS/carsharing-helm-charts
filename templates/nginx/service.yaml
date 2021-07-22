@@ -19,7 +19,7 @@ spec:
     - port: {{ .Values.nginx.service.http3.port }}
       targetPort: http3
       protocol: TCP
-      name: http34432
+      name: http3
   selector:
     {{- include "carsharing-helm-charts.selectorLabels" . | nindent 4 }}
     app: {{ include "carsharing-helm-charts.fullname" . }}-nginx
