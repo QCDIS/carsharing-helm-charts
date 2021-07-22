@@ -105,7 +105,7 @@ spec:
           name: {{ .Chart.Name }}-nodesocialnetwork
           ports:
             - name: http
-              containerPort: 8082
+              containerPort: 8081
               protocol: TCP
 
       {{- with .Values.nodesocialnetwork.nodeSelector }}
