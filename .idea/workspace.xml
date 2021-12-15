@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9981f631-5580-4733-a53d-5290111b3ea4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carsharing-helm-charts-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/carsharing-helm-charts-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/index.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/node-api/node-api-env-car-sharing-api-configmap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/node-api/node-api-env-car-sharing-api-configmap.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -325,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639562062237</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="added new vars">
+      <created>1639562147766</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1639562147766</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
