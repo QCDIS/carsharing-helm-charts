@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9981f631-5580-4733-a53d-5290111b3ea4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/nginx/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nginx/deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/nginx/service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nginx/service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carsharing-helm-charts-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/carsharing-helm-charts-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/index.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +17,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.helmignore" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1tigZPVyrlKy4RPKL8Y0zcmtb66" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -260,7 +263,21 @@
       <option name="project" value="LOCAL" />
       <updated>1626957290237</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="added new vars">
+      <created>1639557967860</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1639557967860</updated>
+    </task>
+    <task id="LOCAL-00031" summary="added new vars">
+      <created>1639558220133</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1639558220133</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -298,7 +315,6 @@
         <entry key="60e69658-08a1-42c1-a7fc-b42e19f33653" value="TOOL_WINDOW" />
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="defined nginx" />
@@ -317,6 +333,7 @@
     <MESSAGE value="1st commit" />
     <MESSAGE value="added charts" />
     <MESSAGE value="fix port" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix port" />
+    <MESSAGE value="added new vars" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new vars" />
   </component>
 </project>
