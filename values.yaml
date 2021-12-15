@@ -135,7 +135,7 @@ nodeapi:
     socket_port: 8110
     socket_url: http://localhost:8110/stream
     swagger_host: localhost:8080
-    network_profile:
+    network_profile: ""
     network_profile_file_path: ""
     certificate_1: ""
     certificate_path_1: ""

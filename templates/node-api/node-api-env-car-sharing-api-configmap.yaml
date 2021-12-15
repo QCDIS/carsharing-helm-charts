@@ -59,7 +59,7 @@ data:
   SOCKET_PORT:  {{ .Values.nodeapi.environment.socket_port | quote}}
   SOCKET_URL: {{ .Values.nodeapi.environment.socket_url | quote}}
   SWAGGER_HOST: {{ .Values.nodeapi.environment.swagger_host | quote}}
-#  NETWORK_PROFILE: {{ .Values.nodeapi.environment.network_profile}}
+  NETWORK_PROFILE: {{ .Values.nodeapi.environment.network_profile}}
 #  NETWORK_PROFILE_FILE_PATH: {{ .Values.nodeapi.environment.network_profile_file_path}}
 #  CERTIFICATE_1: {{ .Values.nodeapi.environment.certificate_1}}
 #  CERTIFICATE_PATH_1: {{ .Values.nodeapi.environment.certificate_path_1}}
