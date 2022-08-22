@@ -7,6 +7,7 @@ metadata:
     app: nodeapi-config
 
 data:
+  FABRIC_CONNECTION_JSON: {{ .Values.nodeapi.environment.frabric-connetcion-json }}
   AI_API_CITY: {{ .Values.nodeapi.environment.ai_api_city }}
   AI_API_URL: {{ .Values.nodeapi.environment.ai_api_url }}
   ART_API_KEY: {{ .Values.nodeapi.environment.art_api_key }}
