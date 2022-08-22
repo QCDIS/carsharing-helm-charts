@@ -85,6 +85,7 @@ nodeapi:
   affinity: {}
 
   environment:
+    frabric-connetcion-json: "{}" 
     ai_api_city: Porto
     ai_api_url:
     art_api_key:
