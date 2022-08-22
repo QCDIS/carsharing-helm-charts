@@ -7,65 +7,55 @@ metadata:
     app: nodeapi-config
 
 data:
-  FABRIC_CONNECTION_JSON: {{ .Values.nodeapi.environment.frabric-connetcion-json }}
-  AI_API_CITY: {{ .Values.nodeapi.environment.ai_api_city }}
-  AI_API_URL: {{ .Values.nodeapi.environment.ai_api_url }}
-  ART_API_KEY: {{ .Values.nodeapi.environment.art_api_key }}
-  ART_KM_LIMIT: {{ .Values.nodeapi.environment.art_km_limit | quote}}
-  ART_KM_LIMIT_TO_START_TRAVEL: {{ .Values.nodeapi.environment.art_km_limit_to_start_travel | quote}}
-  ART_REDUCED_SEATS_PERCENTAGE: {{ .Values.nodeapi.environment.art_reduced_seats_percentage | quote}}
-  ART_SOCIALNETWORK_API_URL: http://{{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork:8081
-  ART_TIME_LIMIT: {{ .Values.nodeapi.environment.art_time_limit | quote}}
-  ART_TIME_LIMIT_TO_START_TRAVEL: {{ .Values.nodeapi.environment.art_time_limit_to_start_travel | quote}}
-  AWS_ACCESS_KEY_ID: {{ .Values.nodeapi.environment.aws_access_key_id}}
-  AWS_API_VERSION_SNS: {{ .Values.nodeapi.environment.aws_api_version_sns}}
-  AWS_REGION: {{ .Values.nodeapi.environment.aws_region}}
-  AWS_SECRET_KEY_ID: {{ .Values.nodeapi.environment.aws_secret_key_id}}
-  AWS_SNS_ARN: {{ .Values.nodeapi.environment.aws_sns_arn}}
-  CARSHARING_API_URL: {{ .Values.nodeapi.environment.carsharing_api_url}}
-  DB_URI: mongodb://{{ .Values.mongodb.env.mongo_initdb_root_username}}:{{ .Values.mongodb.env.mongo_initdb_root_password}}@{{ include "carsharing-helm-charts.fullname" . }}-mongodb/articonf?authSource=admin #{{ .Values.nodeapi.environment.db_uri}}
-  FABRIC_ADMIN_USERNAME: {{ .Values.nodeapi.environment.fabric_admin_username}}
-  FABRIC_CA: {{ .Values.nodeapi.environment.fabric_ca}}
-  FABRIC_CA_ENROLLMENT_ID: {{ .Values.nodeapi.environment.fabric_ca_enrollment_id}}
-  FABRIC_CA_ENROLLMENT_PASS: {{ .Values.nodeapi.environment.fabric_ca_enrollment_pass}}
-  FABRIC_CA_NAME: {{ .Values.nodeapi.environment.fabric_ca_name}}
-  FABRIC_CHAINCODE: {{ .Values.nodeapi.environment.fabric_chaincode}}
-  FABRIC_CHANNEL: {{ .Values.nodeapi.environment.fabric_channel}}
-  FABRIC_CONNECTION_PATH: {{ .Values.nodeapi.environment.fabric_connection_path}}
-  FABRIC_FLEET_MANAGER_SECRET: {{ .Values.nodeapi.environment.fabric_fleet_manager_secret}}
-  FABRIC_FLEET_MANAGER_USERNAME: {{ .Values.nodeapi.environment.fabric_fleet_manager_username}}
-  FABRIC_MSPID: {{ .Values.nodeapi.environment.fabric_mspid}}
-  FABRIC_TLS: {{ .Values.nodeapi.environment.fabric_tls | squote}}
-  FABRIC_WALLET_PATH: {{ .Values.nodeapi.environment.fabric_wallet_path}}
-  FCM_APIKEY: {{ .Values.nodeapi.environment.fcm_apikey}}
-  MAXIMUM_DISTANCE_TO_CHECK_VEHICLE_IN_METTERS: {{ .Values.nodeapi.environment.maximum_distance_to_check_vehicle_in_metters | quote}}
-  MAXIMUM_DISTANCE_TO_PENALIZE_IN_METTERS: {{ .Values.nodeapi.environment.maximum_distance_to_penalize_in_metters | quote}}
-  MAXIMUM_TIME_TO_CHECK_VEHICLE_IN_MINUTES: {{ .Values.nodeapi.environment.maximum_time_to_check_vehicle_in_minutes | quote}}
-  MAXIMUM_TIME_TO_PENALIZE_IN_MINUTES: {{ .Values.nodeapi.environment.maximum_time_to_penalize_in_minutes | quote}}
-  MINIMUM_DISTANCE_TO_PENALIZE_IN_METTERS: {{ .Values.nodeapi.environment.minimum_distance_to_penalize_in_metters | quote}}
-  MINIMUM_TIME_TO_PENALIZE_IN_MINUTES: {{ .Values.nodeapi.environment.minimum_time_to_penalize_in_minutes | quote}}
   NODE_ENV: {{ .Values.nodeapi.environment.node_env | quote}}
-  NODE_TEMP_FOLDER: {{ .Values.nodeapi.environment.node_temp_folder}}
-  PAYPAL_CANCEL_UR: {{ .Values.nodeapi.environment.paypal_cancel_ur}}
+  PORT: {{ .Values.nodeapi.environment.port | quote}}
+  DB_URI: mongodb://{{ .Values.mongodb.env.mongo_initdb_root_username}}:{{ .Values.mongodb.env.mongo_initdb_root_password}}@{{ include "carsharing-helm-charts.fullname" . }}-mongodb/articonf?authSource=admin #{{ .Values.nodeapi.environment.db_uri}}
+  ART_KM_LIMIT: {{ .Values.nodeapi.environment.art_km_limit | quote}}
+  ART_TIME_LIMIT: {{ .Values.nodeapi.environment.art_time_limit | quote}}
+  ART_KM_LIMIT_TO_START_TRAVEL: {{ .Values.nodeapi.environment.art_km_limit_to_start_travel | quote}}
+  ART_TIME_LIMIT_TO_START_TRAVEL: {{ .Values.nodeapi.environment.art_time_limit_to_start_travel | quote}}
+  ART_SOCIALNETWORK_API_URL: http://{{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork:8081
+  ART_API_KEY: {{ .Values.nodeapi.environment.art_api_key }}
+  ART_REDUCED_SEATS_PERCENTAGE: {{ .Values.nodeapi.environment.art_reduced_seats_percentage | quote}}
+  PAYPAL_MODE: {{ .Values.nodeapi.environment.paypal_mode}}
   PAYPAL_CLIENT_ID: {{ .Values.nodeapi.environment.paypal_client_id}}
   PAYPAL_CLIENT_SECRET: {{ .Values.nodeapi.environment.paypal_client_secret}}
-  PAYPAL_MODE: {{ .Values.nodeapi.environment.paypal_mode}}
   PAYPAL_SUCCESS_URL: {{ .Values.nodeapi.environment.paypal_success_url}}
+  PAYPAL_CANCEL_URL: {{ .Values.nodeapi.environment.paypal_cancel_ur}}
   PAYPAL_WEBHOOK_BUY_CS_COIN: {{ .Values.nodeapi.environment.paypal_webhook_buy_cs_coin}}
   PAYPAL_WEBHOOK_WITHDRAW_CS_COIN: {{ .Values.nodeapi.environment.paypal_webhook_withdraw_cs_coin}}
-  PORT: {{ .Values.nodeapi.environment.port | quote}}
-  PRICE_PERCENTAGE_FOR_DISTANCE_REWARD: {{ .Values.nodeapi.environment.price_percentage_for_distance_reward | quote}}
-  PRICE_PERCENTAGE_FOR_VEHICLE_REWARD: {{ .Values.nodeapi.environment.price_percentage_for_vehicle_reward | quote}}
-  RADIUS_NEAREST_LOCATION: {{ .Values.nodeapi.environment.radius_nearest_location | quote}}
+  FABRIC_CA: {{ .Values.nodeapi.environment.fabric_ca}}
+  FABRIC_CA_NAME: {{ .Values.nodeapi.environment.fabric_ca_name}}
+  FABRIC_CA_ENROLLMENT_ID: {{ .Values.nodeapi.environment.fabric_ca_enrollment_id}}
+  FABRIC_CA_ENROLLMENT_PASS: {{ .Values.nodeapi.environment.fabric_ca_enrollment_pass}}
+  FABRIC_CONNECTION_JSON: {{ .Values.nodeapi.environment.fabric_connection_json }}
+  FABRIC_WALLET_PATH: {{ .Values.nodeapi.environment.fabric_wallet_path}}
+  FABRIC_CHAINCODE: {{ .Values.nodeapi.environment.fabric_chaincode}}
+  FABRIC_CHANNEL: {{ .Values.nodeapi.environment.fabric_channel}}
+  FABRIC_ADMIN_USERNAME: {{ .Values.nodeapi.environment.fabric_admin_username}}
+  FABRIC_FLEET_MANAGER_USERNAME: {{ .Values.nodeapi.environment.fabric_fleet_manager_username}}
+  FABRIC_FLEET_MANAGER_SECRET: {{ .Values.nodeapi.environment.fabric_fleet_manager_secret}}
+  FABRIC_MSPID: {{ .Values.nodeapi.environment.fabric_mspid}}
+  FABRIC_TLS: {{ .Values.nodeapi.environment.fabric_tls | squote}}
+  SWAGGER_HOST: {{ .Values.nodeapi.environment.swagger_host | quote}}
   SOCKET_PORT:  {{ .Values.nodeapi.environment.socket_port | quote}}
   SOCKET_URL: {{ .Values.nodeapi.environment.socket_url | quote}}
-  SWAGGER_HOST: {{ .Values.nodeapi.environment.swagger_host | quote}}
-  NETWORK_PROFILE: {{ .Values.nodeapi.environment.network_profile}}
-  NETWORK_PROFILE_FILE_PATH: {{ .Values.nodeapi.environment.network_profile_file_path}}
-  CERTIFICATE_1: {{ .Values.nodeapi.environment.certificate_1}}
-  CERTIFICATE_PATH_1: {{ .Values.nodeapi.environment.certificate_path_1}}
-  CERTIFICATE_2: {{ .Values.nodeapi.environment.certificate_2}}
-  CERTIFICATE_PATH_2: {{ .Values.nodeapi.environment.certificate_path_2}}
-  CERTIFICATE_3: {{ .Values.nodeapi.environment.certificate_3}}
-  CERTIFICATE_PATH_3: {{ .Values.nodeapi.environment.certificate_path_3}}
-
+  NODE_TEMP_FOLDER: {{ .Values.nodeapi.environment.node_temp_folder}}
+  CARSHARING_API_URL: {{ .Values.nodeapi.environment.carsharing_api_url}}
+  RADIUS_NEAREST_LOCATION: {{ .Values.nodeapi.environment.radius_nearest_location | quote}}
+  PRICE_PERCENTAGE_FOR_DISTANCE_REWARD: {{ .Values.nodeapi.environment.price_percentage_for_distance_reward | quote}}
+  PRICE_PERCENTAGE_FOR_VEHICLE_REWARD: {{ .Values.nodeapi.environment.price_percentage_for_vehicle_reward | quote}}
+  AI_API_URL: http://{{ include "carsharing-helm-charts.fullname" . }}-nodepython:8082
+  AWS_ACCESS_KEY_ID: {{ .Values.nodeapi.environment.aws_access_key_id}}
+  AWS_SECRET_KEY_ID: {{ .Values.nodeapi.environment.aws_secret_key_id}}
+  AWS_REGION: {{ .Values.nodeapi.environment.aws_region}}
+  AWS_API_VERSION_SNS: {{ .Values.nodeapi.environment.aws_api_version_sns}}
+  FCM_APIKEY: {{ .Values.nodeapi.environment.fcm_apikey}}
+  AWS_SNS_ARN: {{ .Values.nodeapi.environment.aws_sns_arn}}
+  MAXIMUM_TIME_TO_CHECK_VEHICLE_IN_MINUTES: {{ .Values.nodeapi.environment.maximum_time_to_check_vehicle_in_minutes | quote}}
+  MAXIMUM_DISTANCE_TO_CHECK_VEHICLE_IN_METTERS: {{ .Values.nodeapi.environment.maximum_distance_to_check_vehicle_in_metters | quote}}
+  MINIMUM_TIME_TO_PENALIZE_IN_MINUTES: {{ .Values.nodeapi.environment.minimum_time_to_penalize_in_minutes | quote}}
+  MAXIMUM_TIME_TO_PENALIZE_IN_MINUTES: {{ .Values.nodeapi.environment.minimum_time_to_penalize_in_minutes | quote}}
+  MINIMUM_DISTANCE_TO_PENALIZE_IN_METTERS: {{ .Values.nodeapi.environment.minimum_distance_to_penalize_in_metters | quote}}
+  MAXIMUM_DISTANCE_TO_PENALIZE_IN_METTERS: {{ .Values.nodeapi.environment.maximum_distance_to_penalize_in_metters | quote}}
+  

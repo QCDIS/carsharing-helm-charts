@@ -85,65 +85,54 @@ nodeapi:
   affinity: {}
 
   environment:
-    frabric-connetcion-json: "{}" 
-    ai_api_city: Porto
-    ai_api_url:
-    art_api_key:
-    art_km_limit: 1
-    art_km_limit_to_start_travel: 0.5
-    art_reduced_seats_percentage: 0
-    art_time_limit: 900000
-    art_time_limit_to_start_travel: 300000
-    aws_access_key_id:
-    aws_api_version_sns: 2010-03-31
-    aws_region: eu-west-1
-    aws_secret_key_id:
-    aws_sns_arn:
-    carsharing_api_url: http://localhost:8080
-    fabric_admin_username: admin
-    fabric_ca:
-    fabric_ca_enrollment_id:
-    fabric_ca_enrollment_pass:
-    fabric_ca_name:
-    fabric_chaincode: carsharing
-    fabric_channel: appchannel
-    fabric_connection_path: /home/node/app/config/connection.json
-    fabric_fleet_manager_secret: fleet_managerpw
-    fabric_fleet_manager_username: fleet_manager
-    fabric_mspid:
-    fabric_tls: '{"trustedRoots":[],"verify":false}'
-    fabric_wallet_path: /home/node/app/config/hfc-key-store
-    fcm_apikey:
-    maximum_distance_to_check_vehicle_in_metters: 500
-    maximum_distance_to_penalize_in_metters: 3000
-    maximum_time_to_check_vehicle_in_minutes: 500
-    maximum_time_to_penalize_in_minutes: 60
-    minimum_distance_to_penalize_in_metters: 1000
-    minimum_time_to_penalize_in_minutes: 30
     node_env: production
-    node_temp_folder: /home/node/app/tmp
-    paypal_cancel_ur: https://stg-carsharing.agiliacenter.com/cscoin/cancelBuy
+    port: 8080
+    art_km_limit: 1
+    art_time_limit: 900000
+    art_km_limit_to_start_travel: 0.5
+    art_time_limit_to_start_travel: 300000
+    art_api_key:
+    art_reduced_seats_percentage: 0
+    paypal_mode: sandbox
     paypal_client_id:
     paypal_client_secret:
-    paypal_mode: sandbox
     paypal_success_url: https://stg-carsharing.agiliacenter.com/cscoin/success?id=
+    paypal_cancel_url: https://stg-carsharing.agiliacenter.com/cscoin/cancelBuy
     paypal_webhook_buy_cs_coin:
     paypal_webhook_withdraw_cs_coin:
-    port: 8080
-    price_percentage_for_distance_reward: 0.2
-    price_percentage_for_vehicle_reward: 0.2
-    radius_nearest_location: 3000
+    fabric_ca:
+    fabric_ca_name:
+    fabric_ca_enrollment_id:
+    fabric_ca_enrollment_pass:
+    fabric_connection_json: '{}'
+    fabric_wallet_path: /home/node/app/config/hfc-key-store
+    fabric_chaincode: carsharing
+    fabric_channel: appchannel
+    fabric_admin_username: admin
+    fabric_fleet_manager_username: fleet_manager
+    fabric_fleet_manager_secret: fleet_managerpw
+    fabric_mspid:
+    fabric_tls: '{"trustedRoots":[],"verify":false}'
+    swagger_host: localhost:8080
     socket_port: 8110
     socket_url: http://localhost:8110/stream
-    swagger_host: localhost:8080
-    network_profile: ""
-    network_profile_file_path: ""
-    certificate_1: ""
-    certificate_path_1: ""
-    certificate_2: ""
-    certificate_path_2: ""
-    certificate_3: ""
-    certificate_path_3: ""
+    node_temp_folder: /home/node/app/tmp
+    carsharing_api_url: http://localhost:8080
+    radius_nearest_location: 3000
+    price_percentage_for_distance_reward: 0.2
+    price_percentage_for_vehicle_reward: 0.2
+    aws_access_key_id:
+    aws_secret_key_id:
+    aws_region: eu-west-1
+    aws_api_version_sns: 2010-03-31
+    fcm_apikey:
+    aws_sns_arn:
+    maximum_time_to_check_vehicle_in_minutes: 500
+    maximum_distance_to_check_vehicle_in_metters: 500
+    minimum_time_to_penalize_in_minutes: 30
+    maximum_time_to_penalize_in_minutes: 60
+    minimum_distance_to_penalize_in_metters: 1000
+    maximum_distance_to_penalize_in_metters: 3000
 
 nodesocialnetwork:
   replicaCount: 1
@@ -227,18 +216,18 @@ nodesocialnetwork:
 
   environment:
 
-    art_api_key:
+    node_env: production
+    port: "8081"
     art_api_port: "8080"
-    mongo_database: carsharing-socialnetwork
+    art_api_key:
+    swagger_host: localhost:8081
     mongo_database_type: mongo
-    mongo_host: stg-carsharing.agiliacenter.com
-    mongo_password: ""
+    mongo_database: carsharing-socialnetwork
+    mongo_host: mongodb
     mongo_port: "27017"
     mongo_username: ""
-    node_env: dev
+    mongo_password: ""
     number_of_users_needed_to_report: "2"
-    port: "8081"
-    swagger_host: localhost:8081
 
 nodepython:
   replicaCount: 1
@@ -321,27 +310,23 @@ nodepython:
   affinity: {}
 
   environment:
-    cache_check_period: "86400"
-    cache_ttl: "604800"
-    cities: '{"porto": {"city": "Porto", "latitude": 41.14961, "longitude": -8.61099},
-      "boston": {"city": "Boston", "latitude": 42.35843, "longitude": -71.05977}, "newyork":
-      {"city": "New York", "latitude": 40.71427, "longitude": -74.00597}, "lima": {"city":
-      "Lima", "latitude": -12.04318, "longitude": -77.02824}, "quito": {"city": "Quito",
-      "latitude": -0.22985, "longitude": -78.52495}}'
-    default_temperature: "21"
-    geocode_file: zones_ids.csv
+    node_env: production
+    port: "8082"
     max_number_of_requests: "10000"
     minutes_to_limit_requests: "60"
-    model_file: model.pkl
-    node_env: production
+    cache_ttl: "604800"
+    cache_check_period: "86400"
+    swagger_host: localhost:8081
+    carsharing_api_host: http://nodeapi:8080
     path_model_and_data: /home/python/app/filteredData
-    port: "8082"
+    model_file: model.pkl
+    geocode_file: zones_ids.csv
     prediction_algorithm_file: /home/python/app/carsharing-predictions/predict_points.py
     radius_nearest_location: "3000"
-    swagger_host: localhost:8081
     weather_api_url: https://api.openweathermap.org/data/2.5/onecall
     weather_apikey:
-
+    default_temperature: "21"
+    cities: '{"porto": {"city": "Porto", "latitude": 41.14961, "longitude": -8.61099}, "boston": {"city": "Boston", "latitude": 42.35843, "longitude": -71.05977}, "newyork": {"city": "New York", "latitude": 40.71427, "longitude": -74.00597}, "lima": {"city": "Lima", "latitude": -12.04318, "longitude": -77.02824}, "quito": {"city": "Quito", "latitude": -0.22985, "longitude": -78.52495}}'
 
 nginx:
   replicaCount: 1

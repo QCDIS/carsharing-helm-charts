@@ -31,6 +31,21 @@ spec:
             - node
             - app.js
           env:
+            - name: NODE_ENV
+              valueFrom:
+                configMapKeyRef:
+                  key: NODE_ENV
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  key: PORT
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: DB_URI
+              valueFrom:
+                configMapKeyRef:
+                  key: DB_URI
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
             - name: ART_API_BASEPATH
               valueFrom:
                 configMapKeyRef:
@@ -46,30 +61,25 @@ spec:
                 configMapKeyRef:
                   key: ART_API_PORT
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
-            - name: DB_URI
+            - name: SWAGGER_HOST
               valueFrom:
                 configMapKeyRef:
-                  key: DB_URI
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
-            - name: MONGO_DATABASE
-              valueFrom:
-                configMapKeyRef:
-                  key: MONGO_DATABASE
+                  key: SWAGGER_HOST
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
             - name: MONGO_DATABASE_TYPE
               valueFrom:
                 configMapKeyRef:
                   key: MONGO_DATABASE_TYPE
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
+            - name: MONGO_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGO_DATABASE
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
             - name: MONGO_HOST
               valueFrom:
                 configMapKeyRef:
                   key: MONGO_HOST
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
-            - name: MONGO_PASSWORD
-              valueFrom:
-                configMapKeyRef:
-                  key: MONGO_PASSWORD
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
             - name: MONGO_PORT
               valueFrom:
@@ -81,25 +91,15 @@ spec:
                 configMapKeyRef:
                   key: MONGO_USERNAME
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
-            - name: NODE_ENV
+            - name: MONGO_PASSWORD
               valueFrom:
                 configMapKeyRef:
-                  key: NODE_ENV
+                  key: MONGO_PASSWORD
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
             - name: NUMBER_OF_USERS_NEEDED_TO_REPORT
               valueFrom:
                 configMapKeyRef:
                   key: NUMBER_OF_USERS_NEEDED_TO_REPORT
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
-            - name: PORT
-              valueFrom:
-                configMapKeyRef:
-                  key: PORT
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
-            - name: SWAGGER_HOST
-              valueFrom:
-                configMapKeyRef:
-                  key: SWAGGER_HOST
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodesocialnetwork-config
           image: "{{ .Values.nodesocialnetwork.image.repository }}:{{ .Values.nodesocialnetwork.image.tag | default .Chart.AppVersion }}"
           name: {{ .Chart.Name }}-nodesocialnetwork
