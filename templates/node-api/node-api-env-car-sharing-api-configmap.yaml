@@ -21,7 +21,7 @@ data:
   PAYPAL_CLIENT_ID: {{ .Values.nodeapi.environment.paypal_client_id}}
   PAYPAL_CLIENT_SECRET: {{ .Values.nodeapi.environment.paypal_client_secret}}
   PAYPAL_SUCCESS_URL: {{ .Values.nodeapi.environment.paypal_success_url}}
-  PAYPAL_CANCEL_URL: {{ .Values.nodeapi.environment.paypal_cancel_ur}}
+  PAYPAL_CANCEL_URL: {{ .Values.nodeapi.environment.paypal_cancel_url}}
   PAYPAL_WEBHOOK_BUY_CS_COIN: {{ .Values.nodeapi.environment.paypal_webhook_buy_cs_coin}}
   PAYPAL_WEBHOOK_WITHDRAW_CS_COIN: {{ .Values.nodeapi.environment.paypal_webhook_withdraw_cs_coin}}
   FABRIC_CA: {{ .Values.nodeapi.environment.fabric_ca}}
