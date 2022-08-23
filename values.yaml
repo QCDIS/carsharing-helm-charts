@@ -317,7 +317,6 @@ nodepython:
     cache_ttl: "604800"
     cache_check_period: "86400"
     swagger_host: localhost:8081
-    carsharing_api_host: http://nodeapi:8080
     path_model_and_data: /home/python/app/filteredData
     model_file: model.pkl
     geocode_file: zones_ids.csv
