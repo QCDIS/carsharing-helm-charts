@@ -31,15 +31,35 @@ spec:
             - node
             - app.js
           env:
-            - name: NODE_ENV
+            - name: CACHE_CHECK_PERIOD
               valueFrom:
                 configMapKeyRef:
-                  key: NODE_ENV
+                  key: CACHE_CHECK_PERIOD
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
-            - name: PORT
+            - name: CACHE_TTL
               valueFrom:
                 configMapKeyRef:
-                  key: PORT
+                  key: CACHE_TTL
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
+            - name: CARSHARING_API_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: CARSHARING_API_HOST
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
+            - name: CITIES
+              valueFrom:
+                configMapKeyRef:
+                  key: CITIES
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
+            - name: DEFAULT_TEMPERATURE
+              valueFrom:
+                configMapKeyRef:
+                  key: DEFAULT_TEMPERATURE
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
+            - name: GEOCODE_FILE
+              valueFrom:
+                configMapKeyRef:
+                  key: GEOCODE_FILE
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
             - name: MAX_NUMBER_OF_REQUESTS
               valueFrom:
@@ -51,40 +71,25 @@ spec:
                 configMapKeyRef:
                   key: MINUTES_TO_LIMIT_REQUESTS
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
-            - name: CACHE_TTL
+            - name: MODEL_FILE
               valueFrom:
                 configMapKeyRef:
-                  key: CACHE_TTL
+                  key: MODEL_FILE
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
-            - name: CACHE_CHECK_PERIOD
+            - name: NODE_ENV
               valueFrom:
                 configMapKeyRef:
-                  key: CACHE_CHECK_PERIOD
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
-            - name: SWAGGER_HOST
-              valueFrom:
-                configMapKeyRef:
-                  key: SWAGGER_HOST
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
-            - name: CARSHARING_API_HOST
-              valueFrom:
-                configMapKeyRef:
-                  key: CARSHARING_API_HOST
+                  key: NODE_ENV
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
             - name: PATH_MODEL_AND_DATA
               valueFrom:
                 configMapKeyRef:
                   key: PATH_MODEL_AND_DATA
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
-            - name: MODEL_FILE
+            - name: PORT
               valueFrom:
                 configMapKeyRef:
-                  key: MODEL_FILE
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
-            - name: GEOCODE_FILE
-              valueFrom:
-                configMapKeyRef:
-                  key: GEOCODE_FILE
+                  key: PORT
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
             - name: PREDICTION_ALGORITHM_FILE
               valueFrom:
@@ -96,25 +101,30 @@ spec:
                 configMapKeyRef:
                   key: RADIUS_NEAREST_LOCATION
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
-            - name: WEATHER_API_URL
+            - name: RADIUS_NEAREST_LOCATION
               valueFrom:
                 configMapKeyRef:
-                  key: WEATHER_API_URL
+                  key: RADIUS_NEAREST_LOCATION
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
+            - name: SWAGGER_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: SWAGGER_HOST
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
             - name: WEATHER_APIKEY
               valueFrom:
                 configMapKeyRef:
                   key: WEATHER_APIKEY
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
-            - name: DEFAULT_TEMPERATURE
+            - name: WEATHER_APIKEY
               valueFrom:
                 configMapKeyRef:
-                  key: DEFAULT_TEMPERATURE
+                  key: WEATHER_APIKEY
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
-            - name: CITIES
+            - name: WEATHER_API_URL
               valueFrom:
                 configMapKeyRef:
-                  key: CITIES
+                  key: WEATHER_API_URL
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodepython-config
           image: "{{ .Values.nodepython.image.repository }}:{{ .Values.nodepython.image.tag | default .Chart.AppVersion }}"
           name: {{ .Chart.Name }}-nodepython

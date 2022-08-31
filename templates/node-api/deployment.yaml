@@ -31,100 +31,100 @@ spec:
             - node
             - app.js
           env:
-            - name: NODE_ENV
+            - name: FABRIC_CONNECTION_JSON
               valueFrom:
                 configMapKeyRef:
-                  key: NODE_ENV
+                  key: FABRIC_CONNECTION_JSON
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: PORT
+            - name: AI_API_CITY
               valueFrom:
                 configMapKeyRef:
-                  key: PORT
+                  key: AI_API_CITY
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: DB_URI
+            - name: AI_API_URL
               valueFrom:
                 configMapKeyRef:
-                  key: DB_URI
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: ART_KM_LIMIT
-              valueFrom:
-                configMapKeyRef:
-                  key: ART_KM_LIMIT
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: ART_TIME_LIMIT
-              valueFrom:
-                configMapKeyRef:
-                  key: ART_TIME_LIMIT
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: ART_KM_LIMIT_TO_START_TRAVEL
-              valueFrom:
-                configMapKeyRef:
-                  key: ART_KM_LIMIT_TO_START_TRAVEL
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: ART_TIME_LIMIT_TO_START_TRAVEL
-              valueFrom:
-                configMapKeyRef:
-                  key: ART_TIME_LIMIT_TO_START_TRAVEL
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: ART_SOCIALNETWORK_API_URL
-              valueFrom:
-                configMapKeyRef:
-                  key: ART_SOCIALNETWORK_API_URL
+                  key: AI_API_URL
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
             - name: ART_API_KEY
               valueFrom:
                 configMapKeyRef:
                   key: ART_API_KEY
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: ART_KM_LIMIT
+              valueFrom:
+                configMapKeyRef:
+                  key: ART_KM_LIMIT
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: ART_KM_LIMIT_TO_START_TRAVEL
+              valueFrom:
+                configMapKeyRef:
+                  key: ART_KM_LIMIT_TO_START_TRAVEL
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
             - name: ART_REDUCED_SEATS_PERCENTAGE
               valueFrom:
                 configMapKeyRef:
                   key: ART_REDUCED_SEATS_PERCENTAGE
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: PAYPAL_MODE
+            - name: ART_SOCIALNETWORK_API_URL
               valueFrom:
                 configMapKeyRef:
-                  key: PAYPAL_MODE
+                  key: ART_SOCIALNETWORK_API_URL
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: PAYPAL_CLIENT_ID
+            - name: ART_TIME_LIMIT
               valueFrom:
                 configMapKeyRef:
-                  key: PAYPAL_CLIENT_ID
+                  key: ART_TIME_LIMIT
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: PAYPAL_CLIENT_SECRET
+            - name: ART_TIME_LIMIT_TO_START_TRAVEL
               valueFrom:
                 configMapKeyRef:
-                  key: PAYPAL_CLIENT_SECRET
+                  key: ART_TIME_LIMIT_TO_START_TRAVEL
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: PAYPAL_SUCCESS_URL
+            - name: AWS_ACCESS_KEY_ID
               valueFrom:
                 configMapKeyRef:
-                  key: PAYPAL_SUCCESS_URL
+                  key: AWS_ACCESS_KEY_ID
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: PAYPAL_CANCEL_URL
+            - name: AWS_API_VERSION_SNS
               valueFrom:
                 configMapKeyRef:
-                  key: PAYPAL_CANCEL_URL
+                  key: AWS_API_VERSION_SNS
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: PAYPAL_WEBHOOK_BUY_CS_COIN
+            - name: AWS_REGION
               valueFrom:
                 configMapKeyRef:
-                  key: PAYPAL_WEBHOOK_BUY_CS_COIN
+                  key: AWS_REGION
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: PAYPAL_WEBHOOK_WITHDRAW_CS_COIN
+            - name: AWS_SECRET_KEY_ID
               valueFrom:
                 configMapKeyRef:
-                  key: PAYPAL_WEBHOOK_WITHDRAW_CS_COIN
+                  key: AWS_SECRET_KEY_ID
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: AWS_SNS_ARN
+              valueFrom:
+                configMapKeyRef:
+                  key: AWS_SNS_ARN
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: CARSHARING_API_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: CARSHARING_API_URL
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: DB_URI
+              valueFrom:
+                configMapKeyRef:
+                  key: DB_URI
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: FABRIC_ADMIN_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  key: FABRIC_ADMIN_USERNAME
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
             - name: FABRIC_CA
               valueFrom:
                 configMapKeyRef:
                   key: FABRIC_CA
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: FABRIC_CA_NAME
-              valueFrom:
-                configMapKeyRef:
-                  key: FABRIC_CA_NAME
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
             - name: FABRIC_CA_ENROLLMENT_ID
               valueFrom:
@@ -136,15 +136,10 @@ spec:
                 configMapKeyRef:
                   key: FABRIC_CA_ENROLLMENT_PASS
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: FABRIC_CONNECTION_JSON
+            - name: FABRIC_CA_NAME
               valueFrom:
                 configMapKeyRef:
-                  key: FABRIC_CONNECTION_JSON
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: FABRIC_WALLET_PATH
-              valueFrom:
-                configMapKeyRef:
-                  key: FABRIC_WALLET_PATH
+                  key: FABRIC_CA_NAME
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
             - name: FABRIC_CHAINCODE
               valueFrom:
@@ -156,20 +151,20 @@ spec:
                 configMapKeyRef:
                   key: FABRIC_CHANNEL
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: FABRIC_ADMIN_USERNAME
+            - name: FABRIC_CONNECTION_PATH
               valueFrom:
                 configMapKeyRef:
-                  key: FABRIC_ADMIN_USERNAME
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: FABRIC_FLEET_MANAGER_USERNAME
-              valueFrom:
-                configMapKeyRef:
-                  key: FABRIC_FLEET_MANAGER_USERNAME
+                  key: FABRIC_CONNECTION_PATH
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
             - name: FABRIC_FLEET_MANAGER_SECRET
               valueFrom:
                 configMapKeyRef:
                   key: FABRIC_FLEET_MANAGER_SECRET
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: FABRIC_FLEET_MANAGER_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  key: FABRIC_FLEET_MANAGER_USERNAME
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
             - name: FABRIC_MSPID
               valueFrom:
@@ -181,35 +176,95 @@ spec:
                 configMapKeyRef:
                   key: FABRIC_TLS
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: SWAGGER_HOST
+            - name: FABRIC_WALLET_PATH
               valueFrom:
                 configMapKeyRef:
-                  key: SWAGGER_HOST
+                  key: FABRIC_WALLET_PATH
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: SOCKET_PORT
+            - name: FCM_APIKEY
               valueFrom:
                 configMapKeyRef:
-                  key: SOCKET_PORT
+                  key: FCM_APIKEY
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: SOCKET_URL
+            - name: MAXIMUM_DISTANCE_TO_CHECK_VEHICLE_IN_METTERS
               valueFrom:
                 configMapKeyRef:
-                  key: SOCKET_URL
+                  key: MAXIMUM_DISTANCE_TO_CHECK_VEHICLE_IN_METTERS
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: MAXIMUM_DISTANCE_TO_PENALIZE_IN_METTERS
+              valueFrom:
+                configMapKeyRef:
+                  key: MAXIMUM_DISTANCE_TO_PENALIZE_IN_METTERS
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: MAXIMUM_TIME_TO_CHECK_VEHICLE_IN_MINUTES
+              valueFrom:
+                configMapKeyRef:
+                  key: MAXIMUM_TIME_TO_CHECK_VEHICLE_IN_MINUTES
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: MAXIMUM_TIME_TO_PENALIZE_IN_MINUTES
+              valueFrom:
+                configMapKeyRef:
+                  key: MAXIMUM_TIME_TO_PENALIZE_IN_MINUTES
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: MINIMUM_DISTANCE_TO_PENALIZE_IN_METTERS
+              valueFrom:
+                configMapKeyRef:
+                  key: MINIMUM_DISTANCE_TO_PENALIZE_IN_METTERS
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: MINIMUM_TIME_TO_PENALIZE_IN_MINUTES
+              valueFrom:
+                configMapKeyRef:
+                  key: MINIMUM_TIME_TO_PENALIZE_IN_MINUTES
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: NODE_ENV
+              valueFrom:
+                configMapKeyRef:
+                  key: NODE_ENV
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
             - name: NODE_TEMP_FOLDER
               valueFrom:
                 configMapKeyRef:
                   key: NODE_TEMP_FOLDER
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: CARSHARING_API_URL
+            - name: PAYPAL_CANCEL_UR
               valueFrom:
                 configMapKeyRef:
-                  key: CARSHARING_API_URL
+                  key: PAYPAL_CANCEL_UR
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: RADIUS_NEAREST_LOCATION
+            - name: PAYPAL_CLIENT_ID
               valueFrom:
                 configMapKeyRef:
-                  key: RADIUS_NEAREST_LOCATION
+                  key: PAYPAL_CLIENT_ID
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: PAYPAL_CLIENT_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  key: PAYPAL_CLIENT_SECRET
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: PAYPAL_MODE
+              valueFrom:
+                configMapKeyRef:
+                  key: PAYPAL_MODE
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: PAYPAL_SUCCESS_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: PAYPAL_SUCCESS_URL
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: PAYPAL_WEBHOOK_BUY_CS_COIN
+              valueFrom:
+                configMapKeyRef:
+                  key: PAYPAL_WEBHOOK_BUY_CS_COIN
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: PAYPAL_WEBHOOK_WITHDRAW_CS_COIN
+              valueFrom:
+                configMapKeyRef:
+                  key: PAYPAL_WEBHOOK_WITHDRAW_CS_COIN
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  key: PORT
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
             - name: PRICE_PERCENTAGE_FOR_DISTANCE_REWARD
               valueFrom:
@@ -221,70 +276,65 @@ spec:
                 configMapKeyRef:
                   key: PRICE_PERCENTAGE_FOR_VEHICLE_REWARD
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: AI_API_URL
+            - name: RADIUS_NEAREST_LOCATION
               valueFrom:
                 configMapKeyRef:
-                  key: AI_API_URL
+                  key: RADIUS_NEAREST_LOCATION
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: AWS_ACCESS_KEY_ID
+            - name: SOCKET_PORT
               valueFrom:
                 configMapKeyRef:
-                  key: AWS_ACCESS_KEY_ID
+                  key: SOCKET_PORT
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: AWS_SECRET_KEY_ID
+            - name: SOCKET_URL
               valueFrom:
                 configMapKeyRef:
-                  key: AWS_SECRET_KEY_ID
+                  key: SOCKET_URL
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: AWS_REGION
+            - name: SWAGGER_HOST
               valueFrom:
                 configMapKeyRef:
-                  key: AWS_REGION
+                  key: SWAGGER_HOST
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: AWS_API_VERSION_SNS
+            - name: NETWORK_PROFILE
               valueFrom:
                 configMapKeyRef:
-                  key: AWS_API_VERSION_SNS
+                  key: NETWORK_PROFILE
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: FCM_APIKEY
+            - name: NETWORK_PROFILE_FILE_PATH
               valueFrom:
                 configMapKeyRef:
-                  key: FCM_APIKEY
+                  key: NETWORK_PROFILE_FILE_PATH
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: AWS_SNS_ARN
+            - name: CERTIFICATE_1
               valueFrom:
                 configMapKeyRef:
-                  key: AWS_SNS_ARN
+                  key: CERTIFICATE_1
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: MAXIMUM_TIME_TO_CHECK_VEHICLE_IN_MINUTES
+            - name: CERTIFICATE_PATH_1
               valueFrom:
                 configMapKeyRef:
-                  key: MAXIMUM_TIME_TO_CHECK_VEHICLE_IN_MINUTES
+                  key: CERTIFICATE_PATH_1
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-           - name: MAXIMUM_DISTANCE_TO_CHECK_VEHICLE_IN_METTERS
+            - name: CERTIFICATE_2
               valueFrom:
                 configMapKeyRef:
-                  key: MAXIMUM_DISTANCE_TO_CHECK_VEHICLE_IN_METTERS
+                  key: CERTIFICATE_2
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: MAXIMUM_TIME_TO_PENALIZE_IN_MINUTES
+            - name: CERTIFICATE_PATH_2
               valueFrom:
                 configMapKeyRef:
-                  key: MAXIMUM_TIME_TO_PENALIZE_IN_MINUTES
+                  key: CERTIFICATE_PATH_2
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: MINIMUM_TIME_TO_PENALIZE_IN_MINUTES
+            - name: CERTIFICATE_3
               valueFrom:
                 configMapKeyRef:
-                  key: MINIMUM_TIME_TO_PENALIZE_IN_MINUTES
+                  key: CERTIFICATE_3
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: MAXIMUM_DISTANCE_TO_PENALIZE_IN_METTERS
+            - name: CERTIFICATE_PATH_3
               valueFrom:
                 configMapKeyRef:
-                  key: MAXIMUM_DISTANCE_TO_PENALIZE_IN_METTERS
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: MINIMUM_DISTANCE_TO_PENALIZE_IN_METTERS
-              valueFrom:
-                configMapKeyRef:
-                  key: MINIMUM_DISTANCE_TO_PENALIZE_IN_METTERS
+                  key: CERTIFICATE_PATH_3
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
           image: "{{ .Values.nodeapi.image.repository }}:{{ .Values.nodeapi.image.tag | default .Chart.AppVersion }}"
           name: {{ .Chart.Name }}-nodeapi
