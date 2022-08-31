@@ -31,6 +31,11 @@ spec:
             - node
             - app.js
           env:
+            - name: FABRIC_CONNECTION_JSON
+              valueFrom:
+                configMapKeyRef:
+                  key: FABRIC_CONNECTION_JSON
+                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
             - name: AI_API_CITY
               valueFrom:
                 configMapKeyRef:
