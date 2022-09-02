@@ -306,36 +306,36 @@ spec:
                 configMapKeyRef:
                   key: NETWORK_PROFILE_FILE_PATH
                   name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: CERTIFICATE_1
-              valueFrom:
-                configMapKeyRef:
-                  key: CERTIFICATE_1
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: CERTIFICATE_PATH_1
-              valueFrom:
-                configMapKeyRef:
-                  key: CERTIFICATE_PATH_1
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: CERTIFICATE_2
-              valueFrom:
-                configMapKeyRef:
-                  key: CERTIFICATE_2
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: CERTIFICATE_PATH_2
-              valueFrom:
-                configMapKeyRef:
-                  key: CERTIFICATE_PATH_2
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: CERTIFICATE_3
-              valueFrom:
-                configMapKeyRef:
-                  key: CERTIFICATE_3
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
-            - name: CERTIFICATE_PATH_3
-              valueFrom:
-                configMapKeyRef:
-                  key: CERTIFICATE_PATH_3
-                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+#            - name: CERTIFICATE_1
+#              valueFrom:
+#                configMapKeyRef:
+#                  key: CERTIFICATE_1
+#                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+#            - name: CERTIFICATE_PATH_1
+#              valueFrom:
+#                configMapKeyRef:
+#                  key: CERTIFICATE_PATH_1
+#                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+#            - name: CERTIFICATE_2
+#              valueFrom:
+#                configMapKeyRef:
+#                  key: CERTIFICATE_2
+#                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+#            - name: CERTIFICATE_PATH_2
+#              valueFrom:
+#                configMapKeyRef:
+#                  key: CERTIFICATE_PATH_2
+#                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+#            - name: CERTIFICATE_3
+#              valueFrom:
+#                configMapKeyRef:
+#                  key: CERTIFICATE_3
+#                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
+#            - name: CERTIFICATE_PATH_3
+#              valueFrom:
+#                configMapKeyRef:
+#                  key: CERTIFICATE_PATH_3
+#                  name: {{ include "carsharing-helm-charts.fullname" . }}-nodeapi-config
           image: "{{ .Values.nodeapi.image.repository }}:{{ .Values.nodeapi.image.tag | default .Chart.AppVersion }}"
           name: {{ .Chart.Name }}-nodeapi
           ports:

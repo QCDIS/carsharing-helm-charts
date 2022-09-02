@@ -138,12 +138,12 @@ nodeapi:
     swagger_host: localhost:8080
     network_profile: ""
     network_profile_file_path: ""
-    certificate_1: ""
-    certificate_path_1: ""
-    certificate_2: ""
-    certificate_path_2: ""
-    certificate_3: ""
-    certificate_path_3: ""
+#    certificate_1: ""
+#    certificate_path_1: ""
+#    certificate_2: ""
+#    certificate_path_2: ""
+#    certificate_3: ""
+#    certificate_path_3: ""
 
 nodesocialnetwork:
   replicaCount: 1
