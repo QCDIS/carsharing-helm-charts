@@ -27,7 +27,7 @@ data:
   AWS_ACCESS_KEY_ID: {{ .Values.nodeapi.environment.aws_access_key_id}}
   AWS_API_VERSION_SNS: {{ .Values.nodeapi.environment.aws_api_version_sns}}
   AWS_REGION: {{ .Values.nodeapi.environment.aws_region}}
-  AWS_SECRET_KEY_ID: {{ .Values.nodeapi.environment.aws_secret_key_id}}
+  AWS_SECRET_KEY_ID: {{ .Values.nodeapi.environment.aws_secret_key_id }}
   AWS_SNS_ARN: {{ .Values.nodeapi.environment.aws_sns_arn}}
   CARSHARING_API_URL: {{ .Values.nodeapi.environment.carsharing_api_url}}
   DB_URI: mongodb://{{ .Values.mongodb.env.mongo_initdb_root_username}}:{{ .Values.mongodb.env.mongo_initdb_root_password}}@{{ include "carsharing-helm-charts.fullname" . }}-mongodb/articonf?authSource=admin #{{ .Values.nodeapi.environment.db_uri}}
@@ -85,10 +85,10 @@ data:
   SOCKET_URL: {{ .Values.nodeapi.environment.socket_url | quote}}
   SWAGGER_HOST: {{ .Values.nodeapi.environment.swagger_host | quote}}
   NETWORK_PROFILE: {{ .Values.nodeapi.environment.network_profile}}
-  NETWORK_PROFILE_FILE_PATH: {{ .Values.nodeapi.environment.network_profile_file_path}}
+  NETWORK_PROFILE_FILE_PATH: {{ .Values.nodeapi.environment.network_profile_file_path | default "/home/node/" | quote }}
   AI_API_URL: http://{{ include "carsharing-helm-charts.fullname" . }}-nodepython:8082
-  AWS_ACCESS_KEY_ID: {{ .Values.nodeapi.environment.aws_access_key_id}}
-  AWS_SECRET_KEY_ID: {{ .Values.nodeapi.environment.aws_secret_key_id}}
+  AWS_ACCESS_KEY_ID: {{ .Values.nodeapi.environment.aws_access_key_id | default "SECRET" | quote }}
+  AWS_SECRET_KEY_ID: {{ .Values.nodeapi.environment.aws_secret_key_id | default "SECRET" | quote }}
   AWS_REGION: {{ .Values.nodeapi.environment.aws_region}}
   AWS_API_VERSION_SNS: {{ .Values.nodeapi.environment.aws_api_version_sns}}
   FCM_APIKEY: {{ .Values.nodeapi.environment.fcm_apikey}}
