@@ -94,7 +94,7 @@ nodeapi:
     art_reduced_seats_percentage: 0
     art_time_limit: 900000
     art_time_limit_to_start_travel: 300000
-    aws_access_key_id:
+    aws_access_key_id: ""
     aws_api_version_sns: 2010-03-31
     aws_region: eu-west-1
     aws_secret_key_id:
@@ -138,12 +138,12 @@ nodeapi:
     swagger_host: localhost:8080
     network_profile: ""
     network_profile_file_path: ""
-#    certificate_1: ""
-#    certificate_path_1: ""
-#    certificate_2: ""
-#    certificate_path_2: ""
-#    certificate_3: ""
-#    certificate_path_3: ""
+    certificate_1: ""
+    certificate_path_1: ""
+    certificate_2: ""
+    certificate_path_2: ""
+    certificate_3: ""
+    certificate_path_3: ""
 
 nodesocialnetwork:
   replicaCount: 1

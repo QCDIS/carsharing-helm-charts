@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9981f631-5580-4733-a53d-5290111b3ea4" name="Default Changelist" comment="marge old values">
+    <list default="true" id="9981f631-5580-4733-a53d-5290111b3ea4" name="Default Changelist" comment="remove certificate values">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/node-api/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/node-api/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carsharing-helm-charts-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/carsharing-helm-charts-0.1.0.tgz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/values.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -359,7 +359,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661952649230</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="remove certificate values">
+      <created>1662130424479</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1662130424479</updated>
+    </task>
+    <task id="LOCAL-00044" summary="remove certificate values">
+      <created>1662130459991</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1662130459991</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -434,6 +448,7 @@
     <MESSAGE value="added new vars" />
     <MESSAGE value="fix syntax error" />
     <MESSAGE value="marge old values" />
-    <option name="LAST_COMMIT_MESSAGE" value="marge old values" />
+    <MESSAGE value="remove certificate values" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove certificate values" />
   </component>
 </project>
