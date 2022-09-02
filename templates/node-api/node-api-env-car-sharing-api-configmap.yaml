@@ -84,15 +84,15 @@ data:
   SOCKET_PORT:  {{ .Values.nodeapi.environment.socket_port | quote}}
   SOCKET_URL: {{ .Values.nodeapi.environment.socket_url | quote}}
   SWAGGER_HOST: {{ .Values.nodeapi.environment.swagger_host | quote}}
-  NETWORK_PROFILE: {{ .Values.nodeapi.environment.network_profile}}
+  NETWORK_PROFILE: {{ .Values.nodeapi.environment.network_profile  | default "SECRET" | quote }}
   NETWORK_PROFILE_FILE_PATH: {{ .Values.nodeapi.environment.network_profile_file_path | default "/home/node/" | quote }}
   AI_API_URL: http://{{ include "carsharing-helm-charts.fullname" . }}-nodepython:8082
   AWS_ACCESS_KEY_ID: {{ .Values.nodeapi.environment.aws_access_key_id | default "SECRET" | quote }}
   AWS_SECRET_KEY_ID: {{ .Values.nodeapi.environment.aws_secret_key_id | default "SECRET" | quote }}
   AWS_REGION: {{ .Values.nodeapi.environment.aws_region}}
   AWS_API_VERSION_SNS: {{ .Values.nodeapi.environment.aws_api_version_sns}}
-  FCM_APIKEY: {{ .Values.nodeapi.environment.fcm_apikey}}
-  AWS_SNS_ARN: {{ .Values.nodeapi.environment.aws_sns_arn}}
+  FCM_APIKEY: {{ .Values.nodeapi.environment.fcm_apikey | default "SECRET" | quote }}
+  AWS_SNS_ARN: {{ .Values.nodeapi.environment.aws_sns_arn  | default "SECRET" | quote }}
   MAXIMUM_TIME_TO_CHECK_VEHICLE_IN_MINUTES: {{ .Values.nodeapi.environment.maximum_time_to_check_vehicle_in_minutes | quote}}
   MAXIMUM_DISTANCE_TO_CHECK_VEHICLE_IN_METTERS: {{ .Values.nodeapi.environment.maximum_distance_to_check_vehicle_in_metters | quote}}
   MINIMUM_TIME_TO_PENALIZE_IN_MINUTES: {{ .Values.nodeapi.environment.minimum_time_to_penalize_in_minutes | quote}}
