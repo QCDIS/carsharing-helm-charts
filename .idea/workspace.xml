@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9981f631-5580-4733-a53d-5290111b3ea4" name="Default Changelist" comment="remove certificate values">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carsharing-helm-charts-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/carsharing-helm-charts-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/node-api/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/node-api/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/node-api/node-api-env-car-sharing-api-configmap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/node-api/node-api-env-car-sharing-api-configmap.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/values.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -373,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662130459991</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="remove certificate values">
+      <created>1662132340210</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1662132340210</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">

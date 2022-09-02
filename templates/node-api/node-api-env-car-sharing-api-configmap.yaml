@@ -86,13 +86,6 @@ data:
   SWAGGER_HOST: {{ .Values.nodeapi.environment.swagger_host | quote}}
   NETWORK_PROFILE: {{ .Values.nodeapi.environment.network_profile}}
   NETWORK_PROFILE_FILE_PATH: {{ .Values.nodeapi.environment.network_profile_file_path}}
-  CERTIFICATE_1: {{ .Values.nodeapi.environment.certificate_1}}
-  CERTIFICATE_PATH_1: {{ .Values.nodeapi.environment.certificate_path_1}}
-  CERTIFICATE_2: {{ .Values.nodeapi.environment.certificate_2}}
-  CERTIFICATE_PATH_2: {{ .Values.nodeapi.environment.certificate_path_2}}
-  CERTIFICATE_3: {{ .Values.nodeapi.environment.certificate_3}}
-  CERTIFICATE_PATH_3: {{ .Values.nodeapi.environment.certificate_path_3}}
-
   AI_API_URL: http://{{ include "carsharing-helm-charts.fullname" . }}-nodepython:8082
   AWS_ACCESS_KEY_ID: {{ .Values.nodeapi.environment.aws_access_key_id}}
   AWS_SECRET_KEY_ID: {{ .Values.nodeapi.environment.aws_secret_key_id}}
