@@ -7,24 +7,20 @@ metadata:
     app: nodepython-config
 
 data:
-  CACHE_CHECK_PERIOD: {{ .Values.nodepython.environment.cache_check_period  | quote }}
-  CACHE_TTL: {{ .Values.nodepython.environment.cache_ttl  | quote }}
-  CARSHARING_API_HOST: http://{{ include "carsharing-helm-charts.fullname" . }}-nodeapi:8080
-  CITIES: '{"porto": {"city": "Porto", "latitude": 41.14961, "longitude": -8.61099},
-    "boston": {"city": "Boston", "latitude": 42.35843, "longitude": -71.05977}, "newyork":
-    {"city": "New York", "latitude": 40.71427, "longitude": -74.00597}, "lima": {"city":
-    "Lima", "latitude": -12.04318, "longitude": -77.02824}, "quito": {"city": "Quito",
-    "latitude": -0.22985, "longitude": -78.52495}}'
-  DEFAULT_TEMPERATURE: "21"
-  GEOCODE_FILE: zones_ids.csv
+  NODE_ENV: production
+  PORT: "8082"
   MAX_NUMBER_OF_REQUESTS: "10000"
   MINUTES_TO_LIMIT_REQUESTS: "60"
-  MODEL_FILE: model.pkl
-  NODE_ENV: production
+  CACHE_TTL: {{ .Values.nodepython.environment.cache_ttl  | quote }}
+  CACHE_CHECK_PERIOD: {{ .Values.nodepython.environment.cache_check_period  | quote }}
+  SWAGGER_HOST: localhost:8081
+  CARSHARING_API_HOST: http://{{ include "carsharing-helm-charts.fullname" . }}-nodeapi:8080
   PATH_MODEL_AND_DATA: /home/python/app/filteredData
-  PORT: "8082"
+  MODEL_FILE: model.pkl
+  GEOCODE_FILE: zones_ids.csv
   PREDICTION_ALGORITHM_FILE: /home/python/app/carsharing-predictions/predict_points.py
   RADIUS_NEAREST_LOCATION: "3000"
-  SWAGGER_HOST: localhost:8081
   WEATHER_API_URL: https://api.openweathermap.org/data/2.5/onecall
-  WEATHER_APIKEY: bf4059e936f0272b04b2f98c4c088a6e
+  WEATHER_APIKEY: ""
+  DEFAULT_TEMPERATURE: "21"
+  CITIES: '{"porto": {"city": "Porto", "latitude": 41.14961, "longitude": -8.61099}, "boston": {"city": "Boston", "latitude": 42.35843, "longitude": -71.05977}, "newyork": {"city": "New York", "latitude": 40.71427, "longitude": -74.00597}, "lima": {"city": "Lima", "latitude": -12.04318, "longitude": -77.02824}, "quito": {"city": "Quito", "latitude": -0.22985, "longitude": -78.52495}}'
