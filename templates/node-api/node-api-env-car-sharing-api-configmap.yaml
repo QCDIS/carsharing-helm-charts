@@ -28,7 +28,7 @@ data:
   FABRIC_CA_ENROLLMENT_ID: {{ .Values.nodeapi.environment.fabric_ca_enrollment_id}}
   FABRIC_CA_NAME: {{ .Values.nodeapi.environment.fabric_ca_name}}
   FABRIC_CA_ENROLLMENT_PASS: {{ .Values.nodeapi.environment.fabric_ca_enrollment_pass}}
-  FABRIC_CONNECTION_JSON: {{ .Values.nodeapi.environment.fabric_connection_json | toJson | b64enc | quote }}
+  FABRIC_CONNECTION_JSON: {{ .Values.nodeapi.environment.fabric_connection_json | quote }}
   FABRIC_WALLET_PATH: {{ .Values.nodeapi.environment.fabric_wallet_path}}
   FABRIC_CHAINCODE: {{ .Values.nodeapi.environment.fabric_chaincode}}
   FABRIC_CHANNEL: {{ .Values.nodeapi.environment.fabric_channel}}
